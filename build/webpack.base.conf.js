@@ -1,7 +1,7 @@
-var path = require('path')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
+const path = require('path')
+const utils = require('./utils')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -22,7 +22,10 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'stores': path.resolve(__dirname, '../src/stores'),
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'components': path.resolve(__dirname, '../src/components')
     }
   },
   module: {
@@ -33,7 +36,8 @@ module.exports = {
         enforce: 'pre',
         include: [resolve('src'), resolve('test')],
         options: {
-          formatter: require('eslint-friendly-formatter')
+          formatter: require('eslint-friendly-formatter'),
+          quiet: true
         }
       },
       {
@@ -54,13 +58,17 @@ module.exports = {
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
+      // {
+      //   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      //   loader: 'url-loader',
+      //   options: {
+      //     limit: 10000,
+      //     name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+      //   }
+      // }
       {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-        }
+        test: /\.(woff2?|eot|ttf|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'base64-font-loader'
       }
     ]
   }
