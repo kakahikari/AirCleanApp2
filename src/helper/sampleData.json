@@ -1,0 +1,61 @@
+{
+  "title": "台北市 大安區",
+  "date": "2016.06.01 週三 07:00 AM",
+  "celsius": "31",
+  "pm": "87",
+  "humidity": "60",
+  "rain": "70",
+  "groups": [
+    {
+      "group_name": "群組1",
+      "pm": 400,
+      "co2": 33,
+      "gas": 3,
+      "filter": 80,
+      "celsius": 31,
+      "humidity": 80,
+      "enable": true,
+      "filterM": false,
+      "windy_num": 10,
+      "mode": true,
+      "time": false,
+      "humidityM": true,
+      "humidity_num": 60,
+      "hotM": false
+    },
+    {
+      "group_name": "群組2",
+      "pm": 80,
+      "co2": 33,
+      "gas": 3,
+      "filter": 65,
+      "celsius": 23,
+      "humidity": 30,
+      "enable": false,
+      "filterM": false,
+      "windy_num": 75,
+      "mode": true,
+      "time": false,
+      "humidityM": true,
+      "humidity_num": 60,
+      "hotM": false
+    },
+    {
+      "group_name": "群組3",
+      "pm": 200,
+      "co2": 33,
+      "gas": 3,
+      "filter": 65,
+      "celsius": 29,
+      "humidity": 55,
+      "enable": false,
+      "filterM": false,
+      "windy_num": 75,
+      "mode": true,
+      "time": false,
+      "humidityM": true,
+      "humidity_num": 60,
+      "hotM": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+.weather-info {
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  div {
+    display: flex;
+    align-items: flex-end;
+    > i {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.weather-view {
+  height: calc(100% - 3rem);
+  padding-top: 3rem;
+  position: relative;
+  transition: .3s;
+  top: 0px;
+}

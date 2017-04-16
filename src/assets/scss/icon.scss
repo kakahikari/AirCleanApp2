@@ -1,0 +1,29 @@
+$iconImageUrl: (
+  'setting': 'setting.png',
+  'notice': 'notice.png',
+  'menu': 'menu.png',
+  'sun-cloud': 'sun_cloud.png',
+  'pm': 'pm25.png',
+  'temp': 'body_temp.png',
+  'wet': 'wet.png',
+  'rain': 'rain.png',
+  'new': 'new.png',
+  'edit': 'edit.png',
+  'onbt': 'onbt.png',
+  'offbt': 'offbt.png',
+  'next': 'next.png',
+  'windy': 'Windy.png',
+  'mode': 'mode.png',
+  'wet_w': 'wet_w.png',
+  'time': 'time.png',
+);
+
+@mixin buildIconUrl ($url) {
+  background-image: url('../images/' + $url);
+}
+
+@each $class, $url in $iconImageUrl {
+  &.#{$class} {
+    @include buildIconUrl($url)
+  }
+}

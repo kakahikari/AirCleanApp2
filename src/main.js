@@ -7,6 +7,11 @@ import store from 'stores'
 
 Vue.config.productionTip = false
 
+// UI
+import 'assets/scss/index.scss'
+import touch from 'vue-directive-touch'
+Vue.use(touch)
+
 import VueCordova from 'vue-cordova'
 Vue.use(VueCordova)
 

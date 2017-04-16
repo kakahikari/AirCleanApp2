@@ -1,0 +1,60 @@
+.progress-view {
+  width: 100%;
+  position: absolute;;
+  bottom: 0;
+}
+
+.progress-group {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.progress {
+  margin-bottom: 1rem;
+}
+
+.progress-box {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 0.5rem;
+  canvas {
+    position: absolute;
+  }
+  > .progress-info {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    justify-content: center;
+    &.value {
+      align-items: center;
+      font-size: 2rem;
+    }
+    &.unit {
+      align-items: flex-end;
+      font-size: 1rem;
+    }
+  }
+  > div {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    > i {
+      display: block;
+      width: 30px;
+      height: 72px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.progress-name {
+  width: 90px;
+  display: flex;
+  justify-content: center;
+}

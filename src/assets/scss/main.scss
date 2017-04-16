@@ -1,0 +1,73 @@
+body {
+  font-weight: lighter;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+}
+.flex {
+  display: flex;
+  &.center {
+    // width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  &.between {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+}
+
+
+.view {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-image: url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  transition: .5s;
+  left: 0px;
+}
+
+.scroll {
+  height: calc(100% - 5rem);
+  overflow: auto;
+}
+
+.icon {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &.s {
+    width: 2rem;
+    height: 2rem;
+  }
+  &.m {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  &.l {
+    width: 4rem;
+    height: 4rem;
+  }
+  &.check {
+    width: 4rem;
+    height: 1.5rem;
+  }
+}
+
+.font-size-s {
+  font-size: 1.3rem;
+}
+
+.font-size-m {
+  font-size: 3rem;
+}
+
+.font-size-l {
+  font-size: 4rem;
+}
