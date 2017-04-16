@@ -10,7 +10,8 @@
     "lint": "eslint --ext .js,.vue src",
     "clean": "rm -rf node_modules/* && rm -rf www/*",
     "init": "yarn run clean && yarn install && node setVersion",
-    "browser": "yarn run build && cordova prepare browser && cordova run browser"
+    "browser": "yarn run build && cordova prepare browser && cordova run browser",
+    "android": "yarn run build && cordova prepare android && cordova run android"
   },
   "dependencies": {
     "vue": "^2.2.2",
