@@ -1285,6 +1285,10 @@ cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
 
+countup.js@^1.8.1:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-1.8.3.tgz#d4fa30f468c056f004daeca17dfa6596ac1d32cf"
+
 create-ecdh@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.0.tgz#888c723596cdf7612f6498233eebd7a35301737d"
@@ -4761,6 +4765,17 @@ vue-cordova@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/vue-cordova/-/vue-cordova-0.1.2.tgz#f3ca208b51f1523a8f571447e76a480aa89c081b"
 
+vue-countup-v2@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-countup-v2/-/vue-countup-v2-0.1.2.tgz#ca3b7b7a6c9e293164f4f6e3130c51721548cd8e"
+  dependencies:
+    countup.js "^1.8.1"
+    vue "^2.1.8"
+
+vue-directive-touch@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-directive-touch/-/vue-directive-touch-1.0.3.tgz#b4086aa2c47aef2307dfed9726cc79cf83ce6f18"
+
 vue-hot-reload-api@^2.0.11:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.11.tgz#bf26374fb73366ce03f799e65ef5dfd0e28a1568"
@@ -4804,7 +4819,7 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.2.tgz#a0a6c50c941d2a4abda963f2f42c337ac450ee95"
 
-vue@^2.2.2:
+vue@^2.1.8, vue@^2.2.2:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.2.6.tgz#451714b394dd6d4eae7b773c40c2034a59621aed"
 

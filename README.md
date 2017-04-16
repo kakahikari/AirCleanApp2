@@ -1,19 +1,17 @@
 # vue-cordova-template
 
-> Just another vue-cordova-template
+> Just another vue-cordova-project
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+yarn run init
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn run cordovaDev
 
-# build for production with minification
-npm run build
+# build
+yarn run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```

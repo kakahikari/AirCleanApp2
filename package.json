@@ -1,19 +1,22 @@
 {
   "name": "AirCleanApp2",
   "version": "0.0.0",
-  "description": "Just another vue-cordova-app",
+  "description": "Just another vue-cordova-project",
   "author": "kakahikari <kakahikari@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
     "build": "node setVersion && rm -rf www/* && node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "clean": "rm -rf node_modules/* && rm -rf www/*"
+    "clean": "rm -rf node_modules/* && rm -rf www/*",
+    "init": "yarn run clean && yarn install && node setVersion",
+    "browser": "yarn run build && cordova prepare browser && cordova run browser"
   },
   "dependencies": {
     "vue": "^2.2.2",
     "vue-cordova": "^0.1.2",
+    "vue-countup-v2": "^0.1.2",
+    "vue-directive-touch": "^1.0.3",
     "vue-router": "^2.3.0",
     "vuex": "^2.2.1"
   },
