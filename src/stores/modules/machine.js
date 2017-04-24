@@ -53,12 +53,29 @@ const mutations = {
   SET_MACHINE_RESETFILTER (state, payload) {
     state.resetFilter = payload
   },
-  SET_MACHINE_RESETIMER (state, payload) {
+  SET_MACHINE_TIMER (state, payload) {
     state.resetTimer = payload
+  },
+  SET_MACHINE_TIMER_START (state, payload) {
+    state.timerStartH = payload
+    state.timerStartM = payload
+  },
+  SET_MACHINE_TIMER_END (state, payload) {
+    state.timerEndH = payload
+    state.timerEndM = payload
+  },
+  SET_MACHINE_SHUTDOWN (state, payload) {
+    state.shutdownH = payload
+    state.shutdownM = payload
+  },
+  SET_MACHINE_SPEED (state, payload) {
+    state.speed = payload
+  },
+  SET_MACHINE_TIME (state, payload) {
+    state.timeH = payload
+    state.timeM = payload
+    state.timeS = payload
   }
-  // SET_MACHINE_RESETPM25 (state, payload) {
-  //   state.resetPm25 = payload
-  // }
 }
 
 const actions = {

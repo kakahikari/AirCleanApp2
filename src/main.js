@@ -15,9 +15,23 @@ Vue.use(touch)
 import VueCordova from 'vue-cordova'
 Vue.use(VueCordova)
 
+// add cordova.js only if serving the app through file://
+if (window.location.protocol === 'file:' || window.location.port === '3000') {
+  var cordovaScript = document.createElement('script')
+  cordovaScript.setAttribute('type', 'text/javascript')
+  cordovaScript.setAttribute('src', 'cordova.js')
+  document.body.appendChild(cordovaScript)
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+
+  mounted () {
+    this.$store.dispatch('SET_DEFAULT', {context: this})
+    this.$store.dispatch('SET_CONNECT', {context: this})
+  },
+
   router,
   store,
   template: '<App/>',

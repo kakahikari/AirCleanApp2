@@ -1,5 +1,5 @@
 <template>
-  <div class="view" v-touch:up="touchUpEvent" v-touch:down="touchDownEvent">
+  <div class="view">
     <navbar
       :title="sampleData.title"></navbar>
 
@@ -48,14 +48,6 @@ export default {
       } else {
         this.view.style.left = `${0}px`
       }
-    },
-    touchUpEvent () {
-      this.weather_view.style.top = `-${this.tool.offsetHeight}px`
-      this.tool.style.bottom = `${0}px`
-    },
-    touchDownEvent () {
-      this.weather_view.style.top = `${0}px`
-      this.tool.style.bottom = `-${this.tool.offsetHeight}px`
     },
     getGroupByEbable () {
       return this.sampleData.groups.filter(item => item.enable === true)[0]

@@ -740,7 +740,7 @@ babel-register@^6.22.0, babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.18.0, babel-runtime@^6.22.0:
+babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
@@ -4761,9 +4761,9 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
-vue-cordova@^0.1.2:
+"vue-cordova@github:kakahikari/vue-cordova#dev":
   version "0.1.2"
-  resolved "https://registry.yarnpkg.com/vue-cordova/-/vue-cordova-0.1.2.tgz#f3ca208b51f1523a8f571447e76a480aa89c081b"
+  resolved "https://codeload.github.com/kakahikari/vue-cordova/tar.gz/21815f5b7f04c151a209cc5939d7262b73d86db9"
 
 vue-countup-v2@^0.1.2:
   version "0.1.2"
@@ -4772,9 +4772,9 @@ vue-countup-v2@^0.1.2:
     countup.js "^1.8.1"
     vue "^2.1.8"
 
-vue-directive-touch@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/vue-directive-touch/-/vue-directive-touch-1.0.3.tgz#b4086aa2c47aef2307dfed9726cc79cf83ce6f18"
+vue-directive-touch@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/vue-directive-touch/-/vue-directive-touch-1.0.7.tgz#5a930b1e50af5c776f39074b785d4a870454f312"
 
 vue-hot-reload-api@^2.0.11:
   version "2.0.11"

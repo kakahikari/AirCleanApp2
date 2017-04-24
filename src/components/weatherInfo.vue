@@ -1,5 +1,5 @@
 <template>
-  <div class="weather-view">
+  <div class="weather-view" v-touch:up="touchUpEvent" v-touch:down="touchDownEvent">
     <div class="flex weather-info">
         <div>
           <i class="icon l sun-cloud"></i>
@@ -53,6 +53,14 @@ export default {
   methods: {
     getGroupByEbable () {
       return this.data.groups.filter(item => item.enable === true)[0]
+    },
+    touchUpEvent () {
+      this.weather_view.style.top = `-${this.tool.offsetHeight}px`
+      this.tool.style.bottom = `${0}px`
+    },
+    touchDownEvent () {
+      this.weather_view.style.top = `${0}px`
+      this.tool.style.bottom = `-${this.tool.offsetHeight}px`
     }
   },
   components: {
