@@ -42,7 +42,7 @@ import progressbar from 'components/progressbar'
 export default {
   data () {
     return {
-      keys: ['pm', 'co2', 'gas', 'humidity', 'filter', 'celsius']
+      keys: ['pm', 'co2', 'VOD', 'humidity', 'filter', 'celsius']
     }
   },
   props: {
@@ -54,6 +54,9 @@ export default {
     getGroupByEbable () {
       return this.data.groups.filter(item => item.enable === true)[0]
     },
+    // touchRightEvent () {
+    //   this.$emit('touchRightEvent')
+    // },
     touchUpEvent () {
       this.weather_view.style.top = `-${this.tool.offsetHeight}px`
       this.tool.style.bottom = `${0}px`

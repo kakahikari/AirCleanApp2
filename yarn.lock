@@ -4761,9 +4761,13 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+"vue-cordova@github:kakahikari/vue-cordova":
+  version "0.1.2"
+  resolved "https://codeload.github.com/kakahikari/vue-cordova/tar.gz/79ece750b752dceb72dc793c9c12f957ada19f54"
+
 "vue-cordova@github:kakahikari/vue-cordova#dev":
   version "0.1.2"
-  resolved "https://codeload.github.com/kakahikari/vue-cordova/tar.gz/21815f5b7f04c151a209cc5939d7262b73d86db9"
+  resolved "https://codeload.github.com/kakahikari/vue-cordova/tar.gz/68b82055567e071fa7b31324b2d81edad8ff1220"
 
 vue-countup-v2@^0.1.2:
   version "0.1.2"

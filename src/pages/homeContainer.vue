@@ -1,14 +1,15 @@
 <template>
   <div class="view">
     <navbar
-      :title="sampleData.title"></navbar>
+      :title="sampleData.title"
+    ></navbar>
 
     <div class="flex center">{{sampleData.date}}</div>
 
     <div class="scroll">
       <weather-info
-        :data="sampleData">
-      </weather-info>
+        :data="sampleData"
+      ></weather-info>
 
       <tool
         :data="getGroupByEbable()"></tool>

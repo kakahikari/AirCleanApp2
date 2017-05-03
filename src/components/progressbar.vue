@@ -23,7 +23,7 @@ import progressbarItem from 'components/progressbarItem'
 export default {
   data () {
     return {
-      keys: ['pm', 'co2', 'gas', 'humidity', 'filter', 'celsius'],
+      keys: ['pm', 'co2', 'VOD', 'humidity', 'filter', 'celsius'],
       num: 0
     }
   },
@@ -40,14 +40,14 @@ export default {
       ctx.stroke()
     },
     getKeyName (index) {
-      const name = ['PM2.5', 'CO2', 'GAS', '室內濕度', '濾網:良好', '室內溫度']
+      const name = ['PM2.5', 'CO2', 'VOD', '室內濕度', '濾網:良好', '室內溫度']
       if (this.keys[index] === 'filter' && this.data[this.keys[index]] > 70) {
         return '濾網:需更換'
       }
       return name[index]
     },
     getUnit (key) {
-      const unitKey = ['pm', 'co2', 'gas']
+      const unitKey = ['pm', 'co2', 'VOD']
       const isSame = unitKey.some(k => k === key)
       return isSame ? 'ppm' : '%'
     },

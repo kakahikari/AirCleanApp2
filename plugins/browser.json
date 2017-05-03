@@ -12,10 +12,16 @@
         },
         "cordova-plugin-chrome-apps-sockets-tcp": {
             "PACKAGE_NAME": "io.cordova.airCleanApp2"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "io.cordova.airCleanApp2"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-chrome-apps-common": {
+            "PACKAGE_NAME": "io.cordova.airCleanApp2"
+        },
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.cordova.airCleanApp2"
         }
     }

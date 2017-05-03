@@ -1,5 +1,3 @@
-import MAIN from '../'
-
 const state = {
   power: '0',
   co2: '0',
@@ -83,6 +81,12 @@ const actions = {
 }
 
 const getters = {
+  // MACHINE_DISPLAY: (state) => {
+  //   return {
+  //     group_name: '群組1',
+  //     pm:
+  //   }
+  // },
   MACHINE_VALUE: (state) => {
     let value = state.power + ',' +
       state.co2 + ',' +

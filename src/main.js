@@ -28,8 +28,21 @@ new Vue({
   el: '#app',
 
   mounted () {
-    this.$store.dispatch('SET_DEFAULT', {context: this})
-    this.$store.dispatch('SET_CONNECT', {context: this})
+    this.$store.dispatch('SET_DEFAULT')
+    this.tryConnect(this.$store.state.SETTINGS.ip)
+  },
+
+  methods: {
+    tryConnect (ip) {
+      console.log('checking device ready')
+      if (Vue.cordova.deviceready || process.env.NODE_ENV === 'development') {
+        this.$store.dispatch('SET_CONNECT')
+      } else {
+        setTimeout(() => {
+          this.tryConnect(ip)
+        }, 3000)
+      }
+    }
   },
 
   router,
