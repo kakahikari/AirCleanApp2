@@ -1,25 +1,24 @@
-<template>
-  <div class="scroll">
-    <div class="flex between group-list">
-      <span class="font-size-s">目前選定群組</span>
-      <div class="line flex-1"></div>
-    </div>
+<template lang="pug">
+  .scroll
+    .group-list.flex.between
+      span.font-size-s 目前選定群組
+      .line.flex-1
 
-    <group-item
+    group-item(
       v-for="(item, index) in getDataByEnable(true)"
-      :item="item"
-      :key="`current_group${index}`"></group-item>
+      ":item"="item"
+      ":key"="`current_group${index}`"
+    )
 
-    <div class="flex between group-list">
-      <span class="font-size-s">群組列表</span>
-      <div class="line flex-1"></div>
-    </div>
+    .group-list.flex.between
+      span.font-size-s 群組列表
+      .line.flex-1
 
-    <group-item
+    group-item(
       v-for="(item, index) in getDataByEnable(false)"
-      :item="item"
-      :key="`group${index}`"></group-item>
-  </div>
+      ":item"="item"
+      ":key"="`group${index}`"
+    )
 </template>
 
 <script>

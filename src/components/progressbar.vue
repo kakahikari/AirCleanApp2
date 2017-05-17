@@ -1,20 +1,55 @@
-<template>
-  <div class="progress-view">
-    <div class="flex between group-list">
-      <span class="font-size-s">{{data.group_name}}</span>
-      <div class="line flex-1"></div>
-    </div>
-    <div class="flex progress-group">
-      <progressbar-item
-        v-for="(key, index) in keys"
-        :key="index"
-        :index="index"
-        :num="data[key]"
-        :unit="getUnit(key)"
-        :waring="getWaring(key)"
-        :name="getKeyName(index)"></progressbar-item>
-    </div>
-  </div>
+<template lang="pug">
+  //- .progress-view(v-if="$store.state.MACHINES.list[0].id != '0000'")
+  .progress-view
+    .group-list.flex.between
+      span.font-size-s {{ data.group_name }}
+      .line.flex-1
+    .progress-group.flex
+      progressbar-item(
+        ":key"="filter"
+        ":index"="0"
+        ":num"="data[key]"
+        ":value"="$store.state.MACHINES.list[0].filter"
+        ":unit"="'%'"
+        ":waring"="getWaring(key)"
+        ":name"="'濾網'"
+      )
+      progressbar-item(
+        ":key"="pm25"
+        ":index"="1"
+        ":num"="data[key]"
+        ":value"="$store.state.MACHINES.list[0].pm25"
+        ":unit"="'mg/m3'"
+        ":waring"="getWaring(key)"
+        ":name"="'PM2.5'"
+      )
+      progressbar-item(
+        ":key"="vod"
+        ":index"="2"
+        ":num"="data[key]"
+        ":value"="$store.state.MACHINES.list[0].vod"
+        ":unit"="'ppm'"
+        ":waring"="getWaring(key)"
+        ":name"="'VOD'"
+      )
+      progressbar-item(
+        ":key"="co2"
+        ":index"="3"
+        ":num"="data[key]"
+        ":value"="$store.state.MACHINES.list[0].co2"
+        ":unit"="'ppm'"
+        ":waring"="getWaring(key)"
+        ":name"="'CO2'"
+      )
+      //- progressbar-item(
+      //-   v-for="(key, index) in keys"
+      //-   ":key"="index"
+      //-   ":index"="index"
+      //-   ":num"="data[key]"
+      //-   ":unit"="getUnit(key)"
+      //-   ":waring"="getWaring(key)"
+      //-   ":name"="getKeyName(index)"
+      //- )
 </template>
 
 <script>

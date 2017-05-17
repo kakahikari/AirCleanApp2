@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import SETTINGS from './modules/settings'
-import MACHINE from './modules/machine'
+import MACHINES from './modules/machines'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     SETTINGS,
-    MACHINE
+    MACHINES
   },
 
   actions: {
@@ -25,23 +25,13 @@ export default new Vuex.Store({
 
       Vue.cordova.chromeSocketsTcp.create({}, function (info) {
         commit('SET_SETTINGS_SOCKETID', info.socketId)
-        Vue.cordova.chromeSocketsTcp.connect(state.SETTINGS.socketId, state.SETTINGS.ip, state.SETTINGS.port, (res) => {
+        Vue.cordova.chromeSocketsTcp.connect(state.SETTINGS.socketId, params.ip, state.SETTINGS.port, (res) => {
           if (res === 0) {
             Vue.cordova.chromeSocketsTcp.onReceive.addListener(function (res) {
               dispatch('GET_VALUE', ab2str(res.data).split('\r\n'))
             })
-            // 建立連線3秒內若未收到東西則丟GETIP
-            setTimeout(() => {
-              commit('SET_SETTINGS_JOIN', false)
-              let count = 0
-              let interval = setInterval(() => {
-                if (count > 2) return clearInterval(interval)
-                dispatch('SEND_GETIP')
-                count++
-              }, 1000)
-            }, 3000)
           } else {
-            alert('連線失敗')
+            alert(params.ip + '連線失敗')
           }
         })
       })
@@ -51,31 +41,36 @@ export default new Vuex.Store({
       Vue.cordova.chromeSocketsTcp.send(state.SETTINGS.socketId, data)
     },
     SEND_JOIN ({state}, params) {
-      var data = str2ab('JOIN=' + params.name + ',' + params.password + '\r\n')
-      alert('JOIN=' + params.name + ',"' + params.password + '"\r\n')
+      var data = str2ab('JOIN=' + params.name + ',"' + params.password + '"\r\n')
       Vue.cordova.chromeSocketsTcp.send(state.SETTINGS.socketId, data)
     },
     SEND_REST ({state}) {
       var data = str2ab('REST' + '\r\n')
       Vue.cordova.chromeSocketsTcp.send(state.SETTINGS.socketId, data)
     },
+    SEND_GETAF ({state}) {
+      var data = str2ab('GETAF' + '\r\n')
+      Vue.cordova.chromeSocketsTcp.send(state.SETTINGS.socketId, data)
+    },
     GET_VALUE ({commit, state}, params) {
       if (state.SETTINGS.join) {
         commit('SET_SETTINGS_WIFILIST', params)
       } else {
-        alert('已在家用模式')
         if (params[0][0] === '"') {
           // 為ip命令
-          commit('SET_SETTINGS_IP', params[0])
+          let ip = params[0].replace('"', '').replace('"', '')
+          alert('ip' + ip + '已加入')
+          commit('SET_SETTINGS_IP', ip)
         } else {
           // 機器狀態
+          commit('SET_MACHINE_VALUE', {id: 0, value: params[0]})
         }
       }
-    },
-    SEND_VALUE ({state, getters}) {
-      var data = str2ab('WRAF=' + getters.MACHINE_VALUE + '\r\n')
-      Vue.cordova.chromeSocketsTcp.send(state.SETTINGS.socketId, data)
     }
+    // SEND_VALUE ({state, getters}) {
+    //   var data = str2ab('WRAF=' + getters.MACHINE_VALUE + '\r\n')
+    //   Vue.cordova.chromeSocketsTcp.send(state.SETTINGS.socketId, data)
+    // }
   }
 })
 
@@ -87,6 +82,7 @@ function ab2str (buffer) {
   }
   return str
 }
+
 function str2ab (str) {
   if (/[\u0080-\uffff]/.test(str)) {
     throw new Error('this needs encoding, like UTF-8')

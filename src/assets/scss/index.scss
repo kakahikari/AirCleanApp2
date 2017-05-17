@@ -1,3 +1,5 @@
+@import 'share';
+
 @import './reset.scss';
 @import './main.scss';
 @import './navbar.scss';
@@ -8,3 +10,5 @@
 @import './groupItem.scss';
 @import './progressbar.scss';
 @import './tool.scss';
+
+@import 'pages/new';

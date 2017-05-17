@@ -1,7 +1,7 @@
 import MAIN from '../'
 
 const state = {
-  join: true,
+  join: false,
   ip: '',
   socketId: 0,
   port: 7890,
@@ -10,7 +10,7 @@ const state = {
 
 const mutations = {
   SETTINGS_DEFAULT (state) {
-    state.ready = false
+    state.join = false
     let ip = localStorage.getItem('ip')
     if (ip === null || ip === undefined) ip = '192.168.0.13'
     state.ip = ip
@@ -23,7 +23,7 @@ const mutations = {
   },
   SET_SETTINGS_IP (state, payload) {
     state.ip = payload
-    // localStorage.setItem('ip', payload)
+    if (payload !== '192.168.0.13') localStorage.setItem('ip', payload)
   },
   SET_SETTINGS_SOCKETID (state, payload) {
     state.socketId = payload
@@ -32,6 +32,7 @@ const mutations = {
     state.port = payload
   },
   SET_SETTINGS_WIFILIST (state, payload) {
+    state.join = false
     let list = []
     payload.forEach((node) => {
       let temp = node.split(',')

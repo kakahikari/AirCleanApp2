@@ -1,19 +1,57 @@
-<template>
-  <home-container></home-container>
+<template lang="pug">
+  section.view
+    navbar(":title"="sampleData.title")
+    .flex.center {{sampleData.date}}
+    .scroll
+      weather-info(":data"="sampleData")
+      tool(":data"="getGroupByEbable()")
 </template>
 
 <script>
-import homeContainer from 'pages/homeContainer'
+import navbar from 'components/navbar'
+import weatherInfo from 'components/weatherInfo'
+import tool from 'components/tool'
+import sampleData from 'helper/sampleData.json'
 
 export default {
+  name: 'home',
+
   data () {
-    return {}
+    return {
+      sampleData,
+      show: true,
+      down: false,
+      view: null,
+      weather_view: null,
+      tool: null
+    }
   },
-  created () {
+
+  mounted () {
+    this.view = document.getElementsByClassName('view')[0]
+    this.weather_view = document.getElementsByClassName('weather-view')[0]
+    this.tool = document.getElementsByClassName('tool')[0]
+    this.tool.style.bottom = `-${this.tool.offsetHeight}px`
   },
-  methods: {},
+
+  methods: {
+    menuClick () {
+      this.show = !this.show
+      if (this.view.style.left === '' || this.view.style.left === '0px') {
+        this.view.style.left = `-${window.innerWidth * 0.7}px`
+      } else {
+        this.view.style.left = `${0}px`
+      }
+    },
+    getGroupByEbable () {
+      return this.sampleData.groups.filter(item => item.enable === true)[0]
+    }
+  },
+
   components: {
-    homeContainer
+    navbar,
+    weatherInfo,
+    tool
   }
 }
 </script>

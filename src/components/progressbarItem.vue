@@ -1,18 +1,17 @@
-<template>
-  <div class="progress">
-    <div class="progress-box">
-      <canvas :id="`canvas_${index}`" width="90" height="90"></canvas>
-      <i-count-up
-        class="flex progress-info value"
-        :start="0"
-        :end="num"
-        :decimals="0"
-        :duration="2.5"></i-count-up>
-      <span class="flex progress-info unit">{{unit}}</span>
-      <div v-if="waring"><i class="notice"></i></div>
-    </div>
-    <span class="progress-name">{{name}}</span>
-  </div>
+<template lang="pug">
+  .progress
+    .progress-box
+      canvas(":id"="`canvas_${index}`" width="90" height="90")
+      //- <i-count-up
+      //-   class="flex progress-info value"
+      //-   :start="0"
+      //-   :end="num"
+      //-   :decimals="0"
+      //-   :duration="2.5">
+      span.progress-info.flex.value {{ value }}
+      span.progress-info.flex.unit {{ unit }}
+      //- <div v-if="waring"><i class="notice"></i></div>
+    span.progress-name {{ name }}
 </template>
 
 <script>
@@ -22,6 +21,9 @@ export default {
   props: {
     index: {
       type: Number
+    },
+    value: {
+      default: 0
     },
     num: {
       type: Number,

@@ -1,0 +1,15 @@
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      true;
+
+@import 'color';
+
+// layout
+$header_title_margin: 33px;
+$header_margin: 14px;
+$header_icon_size: 32px;
+
+// component
+$input_padding: .5em;

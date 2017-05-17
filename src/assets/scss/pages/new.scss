@@ -1,0 +1,50 @@
+.view-new {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $bgc;
+}
+
+header {
+  .view-new & {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 $header_margin;
+    .title {
+      margin: $header_title_margin 0;
+    }
+    .close {
+      width: $header_icon_size;
+      height: $header_icon_size;
+      background-image: url('../images/icon-close.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .nothing {
+      width: $header_icon_size;
+      height: $header_icon_size;
+    }
+  }
+}
+
+.view-new__banner {
+  height: 100px;
+  margin-bottom: 1em;
+  background-color: $bgc_rev;
+  background-image: url('../images/machine.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.view-new__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .row {
+    width: 70%;
+    line-height: 3em;
+  }
+}
