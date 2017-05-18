@@ -1,0 +1,30 @@
+.view-settings {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $bgc;
+}
+
+header {
+  .view-settings & {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 $header_margin;
+    .title {
+      margin: $header_title_margin 0;
+    }
+    .close {
+      width: $header_icon_size;
+      height: $header_icon_size;
+      background-image: url('../images/icon-close.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .nothing {
+      width: $header_icon_size;
+      height: $header_icon_size;
+    }
+  }
+}

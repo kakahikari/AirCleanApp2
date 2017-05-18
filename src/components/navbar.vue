@@ -1,12 +1,12 @@
-<template>
-  <div>
-    <div class="flex navbar">
-      <div class="flex center"><i class="icon m setting"></i></div>
-      <span>{{title}}</span>
-      <div @click="menuClick" class="flex center"><i class="icon m menu"></i></div>
-    </div>
-    <drawer></drawer>
-  </div>
+<template lang="pug">
+  div
+    .flex.navbar
+      .flex.center
+        i.icon.m.setting(@click="settingClick()")
+      span {{title}}
+      .flex.center(@click="menuClick()")
+        i.icon.m.menu
+    drawer
 </template>
 
 <script>
@@ -28,6 +28,9 @@ export default {
       } else {
         view.style.left = `${0}px`
       }
+    },
+    settingClick () {
+      this.$router.push({ name: 'settings' })
     }
   },
   created () {},
